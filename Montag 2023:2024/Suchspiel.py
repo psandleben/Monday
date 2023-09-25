@@ -15,20 +15,21 @@ class Suchspiel(arcade.Window):
 
         self.gegenstand_liste = arcade.SpriteList()
 
-        crate_1 = arcade.Sprite("grafik/crate.png") 
-        crate_1.center_x = random.randrange(self.width -150)
-        crate_1.center_y = random.randrange(self.height -150)
-        self.gegenstand_liste.append(crate_1)
+        for i in range(500000000000000000):
+            crate_1 = arcade.Sprite("grafik/crate.png") 
+            crate_1.center_x = random.randrange(self.width)
+            crate_1.center_y = random.randrange(self.height)
+            self.gegenstand_liste.append(crate_1)
 
-        crate_2 = arcade.Sprite("grafik/crate.png") 
-        crate_2.center_x = random.randrange(self.width -150)
-        crate_2.center_y = random.randrange(self.height -150)
-        self.gegenstand_liste.append(crate_2)
+            crate_2 = arcade.Sprite("grafik/crate.png") 
+            crate_2.center_x = random.randrange(self.width)
+            crate_2.center_y = random.randrange(self.height)
+            self.gegenstand_liste.append(crate_2)
 
-        crate_3 = arcade.Sprite("grafik/crate.png") 
-        crate_3.center_x = random.randrange(self.width -150)
-        crate_3.center_y = random.randrange(self.height -150)
-        self.gegenstand_liste.append(crate_3)
+            crate_3 = arcade.Sprite("grafik/crate.png") 
+            crate_3.center_x = random.randrange(self.width)
+            crate_3.center_y = random.randrange(self.height)
+            self.gegenstand_liste.append(crate_3)
 
     def on_key_press(self, symbol, modifiers):
         if symbol == arcade.key.Q:
@@ -38,7 +39,7 @@ class Suchspiel(arcade.Window):
         hit_box_mouse = arcade.Sprite()
         hit_box_mouse.center_x = x
         hit_box_mouse.center_y = y
-        hit_box_mouse.set_hit_box([(1,1), (-1,1), (1, -1), (-1, -1)])
+        hit_box_mouse.set_hit_box([(100,100), (-100,100), (100, -100), (-100, -100)])
 
         hitliste = arcade.check_for_collision_with_list(hit_box_mouse, self.gegenstand_liste)
         for gegenstand in hitliste:
@@ -54,3 +55,5 @@ class Suchspiel(arcade.Window):
 sp = Suchspiel(800, 600, "Find the Items")
 
 arcade.run()
+
+
